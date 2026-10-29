@@ -174,8 +174,8 @@ const removeListingHandler = async (id: string) => {
   return (
     <>
       <Helmet>
-        <title>My Profile — Campus Bazaar</title>
-        <meta name="description" content="Manage your Campus Bazaar profile, listings, saved items, and account settings." />
+        <title>My Profile — CampusKart</title>
+        <meta name="description" content="Manage your CampusKart profile, listings, saved items, and account settings." />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
@@ -406,7 +406,7 @@ const removeListingHandler = async (id: string) => {
               <div className="bg-gradient-to-br from-indigo-950 to-violet-900 rounded-2xl p-5 text-white">
                 <div className="flex items-center gap-2 mb-3">
                   <Crown size={16} className="text-amber-400" />
-                  <span className="text-sm font-bold">Campus Bazaar Pro</span>
+                  <span className="text-sm font-bold">CampusKart Pro</span>
                 </div>
                 <p className="text-xs text-indigo-200 mb-4 leading-relaxed">
                   Unlock unlimited listings, verified badge, and 5x more views with Pro.
@@ -692,7 +692,7 @@ const removeListingHandler = async (id: string) => {
                       <Crown size={28} className="text-amber-400 mx-auto mb-3" />
                       <h3 className="text-lg font-bold font-heading mb-2">Unlock Advanced Analytics</h3>
                       <p className="text-indigo-200 text-sm mb-5 max-w-sm mx-auto">
-                        See per-listing view trends, buyer demographics, best time to post, and revenue forecasts with Campus Bazaar Pro.
+                        See per-listing view trends, buyer demographics, best time to post, and revenue forecasts with CampusKart Pro.
                       </p>
                       <Link
                         to="/premium"

@@ -42,6 +42,7 @@ const moderateListing = async (product) => {
 const mapListing = (listing) => {
   return {
     id: listing._id.toString(),
+    sellerId: listing.seller ? listing.seller.toString() : null,
     title: listing.title,
     price: Number(listing.price || 0),
     originalPrice: Number(listing.originalPrice || listing.price || 0),

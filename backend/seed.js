@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import Listing from './models/Listing.js';
 import User from './models/User.js';
 
-const seedEmail = 'demo-seller@campusbazaar.local';
+const seedEmail = 'demo-seller@campuskart.local';
 const defaultImage = '/assets/default-listing.jpg';
 const image = (photoId) => `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=900&q=85`;
 
@@ -100,9 +100,9 @@ const seed = async () => {
   let seller = await User.findOne({ email: seedEmail });
   if (!seller) {
     seller = await User.create({
-      name: 'Campus Bazaar Demo Seller',
+      name: 'CampusKart Demo Seller',
       email: seedEmail,
-      password: await bcrypt.hash('campus-bazaar-demo', 10),
+      password: await bcrypt.hash('campuskart-demo', 10),
       avatarBg: '#4f46e5',
       isVerified: true,
     });

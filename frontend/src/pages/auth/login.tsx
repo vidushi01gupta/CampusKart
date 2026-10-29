@@ -32,7 +32,7 @@ export default function AuthPage() {
       if (mode === 'signup') {
         const { error } = await authClient.signUp.email({ name, email, password });
         if (error) throw new Error(error.message ?? 'Sign up failed');
-        toast.success('Account created! Welcome to Campus Bazaar.');
+        toast.success('Account created! Welcome to CampusKart.');
         navigate(from, { replace: true });
       } else {
         const { error } = await authClient.signIn.email({ email, password });
@@ -49,8 +49,8 @@ export default function AuthPage() {
 
   return (
     <>
-      <title>{mode === 'login' ? 'Log In' : 'Sign Up'} — Campus Bazaar</title>
-      <meta name="description" content="Log in or sign up to buy and sell on Campus Bazaar." />
+      <title>{mode === 'login' ? 'Log In' : 'Sign Up'} — CampusKart</title>
+      <meta name="description" content="Log in or sign up to buy and sell on CampusKart." />
 
       <div className="min-h-screen bg-background flex">
         {/* Left panel — decorative */}
@@ -105,7 +105,7 @@ export default function AuthPage() {
                 <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center">
                   <ShoppingBag size={18} className="text-white" />
                 </div>
-                <span className="text-white font-bold text-lg font-heading">Campus Bazaar</span>
+                <span className="text-white font-bold text-lg font-heading">CampusKart</span>
               </div>
               <h2 className="text-4xl font-bold text-white font-heading tracking-tight leading-tight mb-4">
                 Your campus.<br />Your marketplace.
@@ -147,7 +147,7 @@ export default function AuthPage() {
               <div className="w-8 h-8 rounded-xl bg-primary flex items-center justify-center">
                 <ShoppingBag size={16} className="text-primary-foreground" />
               </div>
-              <span className="font-bold text-foreground font-heading">Campus Bazaar</span>
+              <span className="font-bold text-foreground font-heading">CampusKart</span>
             </div>
 
             {/* Mode toggle */}

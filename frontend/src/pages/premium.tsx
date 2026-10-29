@@ -47,7 +47,7 @@ const PERKS = [
 ];
 
 const TESTIMONIALS = [
-  { name: 'Priya Sharma', role: 'Sold 14 items', avatar: 'PS', avatarBg: 'bg-pink-100 text-pink-700', text: 'Campus Bazaar Pro helped me sell my old laptop in 2 hours. The boosted listing made all the difference!', rating: 5 },
+  { name: 'Priya Sharma', role: 'Sold 14 items', avatar: 'PS', avatarBg: 'bg-pink-100 text-pink-700', text: 'CampusKart Pro helped me sell my old laptop in 2 hours. The boosted listing made all the difference!', rating: 5 },
   { name: 'Karan Singh', role: 'Power Seller', avatar: 'KS', avatarBg: 'bg-blue-100 text-blue-700', text: 'The analytics dashboard is incredible. I can see exactly which listings get the most interest and price accordingly.', rating: 5 },
   { name: 'Ananya Reddy', role: 'Top Rated Seller', avatar: 'AR', avatarBg: 'bg-rose-100 text-rose-700', text: 'The verified badge made buyers trust me immediately. My response rate went from 40% to 90% after going Pro.', rating: 5 },
 ];
@@ -88,7 +88,7 @@ export default function PremiumPage() {
       toast.error('Please log in to subscribe');
       return;
     }
-    toast.success(`🎉 Welcome to Campus Bazaar Pro! (${planId} plan)`, {
+    toast.success(`🎉 Welcome to CampusKart Pro! (${planId} plan)`, {
       description: 'Your Pro features are now active.',
       duration: 4000,
     });
@@ -97,22 +97,22 @@ export default function PremiumPage() {
   return (
     <>
       <Helmet>
-        <title>Campus Bazaar Pro — Sell Faster, Earn More</title>
-        <meta name="description" content="Upgrade to Campus Bazaar Pro for unlimited listings, boosted placement, verified badge, and advanced analytics." />
-        <link rel="canonical" href="https://campusbazaar.in/premium" />
-        <meta property="og:title" content="Campus Bazaar Pro — Sell Faster, Earn More" />
-        <meta property="og:description" content="Upgrade to Campus Bazaar Pro for unlimited listings, boosted placement, verified badge, and advanced analytics." />
-        <meta property="og:url" content="https://campusbazaar.in/premium" />
+        <title>CampusKart Pro — Sell Faster, Earn More</title>
+        <meta name="description" content="Upgrade to CampusKart Pro for unlimited listings, boosted placement, verified badge, and advanced analytics." />
+        <link rel="canonical" href="https://campusKart.in/premium" />
+        <meta property="og:title" content="CampusKart Pro — Sell Faster, Earn More" />
+        <meta property="og:description" content="Upgrade to CampusKart Pro for unlimited listings, boosted placement, verified badge, and advanced analytics." />
+        <meta property="og:url" content="https://campusKart.in/premium" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://campusbazaar.in/og-home.png" />
+        <meta property="og:image" content="https://campusKart.in/og-home.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://campusbazaar.in/og-home.png" />
+        <meta name="twitter:image" content="https://campusKart.in/og-home.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          "name": "Campus Bazaar Pro",
-          "description": "Premium plan for Campus Bazaar — unlimited listings, boosted placement, verified badge, and advanced analytics.",
-          "url": "https://campusbazaar.in/premium",
+          "name": "CampusKart Pro",
+          "description": "Premium plan for CampusKart — unlimited listings, boosted placement, verified badge, and advanced analytics.",
+          "url": "https://campusKart.in/premium",
           "offers": [
             { "@type": "Offer", "name": "Monthly", "priceCurrency": "INR", "price": "99" },
             { "@type": "Offer", "name": "Semester", "priceCurrency": "INR", "price": "249" },
@@ -137,7 +137,7 @@ export default function PremiumPage() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-semibold mb-6 backdrop-blur-sm">
                 <Crown size={14} className="text-amber-400" />
-                Campus Bazaar Pro
+                CampusKart Pro
               </div>
               <h1 className="text-5xl md:text-6xl font-bold font-heading tracking-tight mb-6 leading-tight">
                 Sell Faster.<br />

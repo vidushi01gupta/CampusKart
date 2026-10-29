@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 
 type Theme = 'light' | 'dark';
 
-const STORAGE_KEY = 'campus-bazaar-theme';
+const STORAGE_KEY = 'campus-kart-theme';
 
 function getInitialTheme(): Theme {
   if (typeof window === 'undefined') return 'light';

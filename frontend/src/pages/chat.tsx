@@ -226,8 +226,8 @@ export default function ChatPage() {
   return (
     <>
       <Helmet>
-        <title>Messages — Campus Bazaar</title>
-        <meta name="description" content="Your Campus Bazaar messages. Chat with buyers and sellers about listings." />
+        <title>Messages — CampusKart</title>
+        <meta name="description" content="Your CampusKart messages. Chat with buyers and sellers about listings." />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 

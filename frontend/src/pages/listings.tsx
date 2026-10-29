@@ -70,22 +70,22 @@ export default function ListingsPage() {
   return (
     <>
       <Helmet>
-        <title>Browse Listings — Campus Bazaar</title>
-        <meta name="description" content="Browse student listings on Campus Bazaar. Filter by category, price, and condition to find books, electronics, bikes, furniture and more." />
-        <link rel="canonical" href="https://campusbazaar.in/listings" />
-        <meta property="og:title" content="Browse Listings — Campus Bazaar" />
-        <meta property="og:description" content="Browse student listings on Campus Bazaar. Filter by category, price, and condition." />
-        <meta property="og:url" content="https://campusbazaar.in/listings" />
+        <title>Browse Listings — CampusKart</title>
+        <meta name="description" content="Browse student listings on CampusKart. Filter by category, price, and condition to find books, electronics, bikes, furniture and more." />
+        <link rel="canonical" href="https://campusKart.in/listings" />
+        <meta property="og:title" content="Browse Listings — CampusKart" />
+        <meta property="og:description" content="Browse student listings on CampusKart. Filter by category, price, and condition." />
+        <meta property="og:url" content="https://campusKart.in/listings" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://campusbazaar.in/og-home.png" />
+        <meta property="og:image" content="https://campusKart.in/og-home.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://campusbazaar.in/og-home.png" />
+        <meta name="twitter:image" content="https://campusKart.in/og-home.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          "name": "Browse Listings — Campus Bazaar",
-          "url": "https://campusbazaar.in/listings",
-          "description": "Browse all student listings on Campus Bazaar."
+          "name": "Browse Listings — CampusKart",
+          "url": "https://campusKart.in/listings",
+          "description": "Browse all student listings on CampusKart."
         })}</script>
       </Helmet>
 

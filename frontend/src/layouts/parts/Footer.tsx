@@ -15,14 +15,14 @@ export default function Footer() {
                 <ShoppingBag size={16} className="text-primary-foreground" />
               </div>
               <span className="text-lg font-bold text-foreground font-heading">
-                Campus<span className="text-primary">Bazaar</span>
+                Campus<span className="text-primary">Kart</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               The smart marketplace built for students. Buy, sell, and connect — all within your campus.
             </p>
             <p className="text-xs text-muted-foreground mt-2">
-              © {currentYear} CampusBazaar. All rights reserved.
+              © {currentYear} CampusKart. All rights reserved.
             </p>
           </div>
 

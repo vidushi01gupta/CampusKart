@@ -319,25 +319,25 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Campus Bazaar — Smart Student Marketplace</title>
+        <title>CampusKart — Smart Student Marketplace</title>
         <meta name="description" content="Buy and sell items within your campus. Books, electronics, furniture, bikes and more — all from fellow students." />
-        <link rel="canonical" href="https://campusbazaar.in/" />
-        <meta property="og:title" content="Campus Bazaar — Smart Student Marketplace" />
+        <link rel="canonical" href="https://campusKart.in/" />
+        <meta property="og:title" content="CampusKart — Smart Student Marketplace" />
         <meta property="og:description" content="Buy and sell items within your campus. Books, electronics, furniture, bikes and more — all from fellow students." />
-        <meta property="og:url" content="https://campusbazaar.in/" />
+        <meta property="og:url" content="https://campusKart.in/" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://campusbazaar.in/og-home.png" />
+        <meta property="og:image" content="https://campusKart.in/og-home.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://campusbazaar.in/og-home.png" />
+        <meta name="twitter:image" content="https://campusKart.in/og-home.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "name": "Campus Bazaar",
-          "url": "https://campusbazaar.in",
+          "name": "CampusKart",
+          "url": "https://campusKart.in",
           "description": "Smart student marketplace — buy and sell books, electronics, bikes, furniture and more within your campus.",
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://campusbazaar.in/listings?q={search_term_string}",
+            "target": "https://campusKart.in/listings?q={search_term_string}",
             "query-input": "required name=search_term_string"
           }
         })}</script>

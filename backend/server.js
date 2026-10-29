@@ -18,11 +18,11 @@ app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173', creden
 app.use(express.json());
 
 app.get('/api/health', (req, res) => {
-  res.json({ success: true, message: 'Campus Bazaar backend is running' });
+  res.json({ success: true, message: 'CampusKart backend is running' });
 });
 
 app.get('/api', (req, res) => {
-  res.json({ message: 'Campus Bazaar API' });
+  res.json({ message: 'CampusKart API' });
 });
 
 app.use('/api/auth', authRoutes);

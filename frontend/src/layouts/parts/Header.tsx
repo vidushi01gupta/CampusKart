@@ -42,7 +42,7 @@ export default function Header() {
               <ShoppingBag size={16} className="text-primary-foreground" />
             </div>
             <span className="text-lg font-bold text-foreground font-heading">
-              Campus<span className="text-primary">Bazaar</span>
+              Campus<span className="text-primary">Kart</span>
             </span>
           </Link>
 

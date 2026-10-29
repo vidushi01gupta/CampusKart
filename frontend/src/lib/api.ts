@@ -1,5 +1,5 @@
-// Shared API client for Campus Bazaar
-const TOKEN_KEY = 'campus-bazaar-token';
+// Shared API client for CampusKart
+const TOKEN_KEY = 'campuskart-token';
 
 export type ApiListing = {
   id: string;

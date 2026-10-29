@@ -17,7 +17,7 @@ app.use(express.json({ limit: "10kb" }));
 app.get("/health", (req, res) => {
   res.json({
     status: "ok",
-    service: "campus-bazaar-ai",
+    service: "campus-kart-ai",
   });
 });
 

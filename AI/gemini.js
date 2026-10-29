@@ -125,7 +125,7 @@ Suggested price:
 
 export async function moderateProductListing(product) {
   const prompt = `
-You are a content moderator for Campus-Bazaar, a second-hand marketplace for college students in India.
+You are a content moderator for CampusKart, a second-hand marketplace for college students in India.
 
 Evaluate the product listing for:
 1. Clearly prohibited or dangerous items.

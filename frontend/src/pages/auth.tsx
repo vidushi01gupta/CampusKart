@@ -25,12 +25,12 @@ export default function AuthPage() {
       toast.error('Passwords do not match');
       return;
     }
-    toast.success('Account created! Welcome to Campus Bazaar.');
+    toast.success('Account created! Welcome to CampusKart.');
   };
 
   return (
     <>
-      <title>{mode === 'login' ? 'Login' : 'Sign Up'} — Campus Bazaar</title>
+      <title>{mode === 'login' ? 'Login' : 'Sign Up'} — CampusKart</title>
 
       <div className="min-h-screen bg-background flex">
         {/* Left panel — decorative */}
@@ -132,7 +132,7 @@ export default function AuthPage() {
                   transition={{ duration: 0.25 }}
                 >
                   <h1 className="text-2xl font-bold text-foreground font-heading mb-1">Welcome back</h1>
-                  <p className="text-muted-foreground text-sm mb-7">Log in to your Campus Bazaar account</p>
+                  <p className="text-muted-foreground text-sm mb-7">Log in to your CampusKart account</p>
 
                   <form onSubmit={loginForm.handleSubmit(onLogin)} className="space-y-4">
                     <div>
@@ -189,7 +189,7 @@ export default function AuthPage() {
                   transition={{ duration: 0.25 }}
                 >
                   <h1 className="text-2xl font-bold text-foreground font-heading mb-1">Create account</h1>
-                  <p className="text-muted-foreground text-sm mb-7">Join Campus Bazaar — it's completely free</p>
+                  <p className="text-muted-foreground text-sm mb-7">Join CampusKart — it's completely free</p>
 
                   <form onSubmit={signupForm.handleSubmit(onSignup)} className="space-y-4">
                     <div>

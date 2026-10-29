@@ -327,7 +327,7 @@ const onSubmit = async (data: FormData) => {
           <p className="text-muted-foreground mb-6">
            {moderationStatus === 'review'
            ? 'Your listing has been submitted for manual review. It will not appear in public browsing until approved.'
-           : 'Your item is now live on Campus Bazaar. Students can find and contact you.'}
+           : 'Your item is now live on CampusKart. Students can find and contact you.'}
           </p>
 
         {moderationStatus === 'review' && moderationReasons.length > 0 && (
@@ -406,16 +406,16 @@ const onSubmit = async (data: FormData) => {
   return (
     <>
       <Helmet>
-        <title>Sell an Item — Campus Bazaar</title>
-        <meta name="description" content="List your item for sale on Campus Bazaar. Reach hundreds of students on your campus — books, electronics, bikes, furniture and more." />
-        <link rel="canonical" href="https://campusbazaar.in/sell" />
-        <meta property="og:title" content="Sell an Item — Campus Bazaar" />
-        <meta property="og:description" content="List your item for sale on Campus Bazaar. Reach hundreds of students on your campus." />
-        <meta property="og:url" content="https://campusbazaar.in/sell" />
+        <title>Sell an Item — CampusKart</title>
+        <meta name="description" content="List your item for sale on CampusKart. Reach hundreds of students on your campus — books, electronics, bikes, furniture and more." />
+        <link rel="canonical" href="https://campusKart.in/sell" />
+        <meta property="og:title" content="Sell an Item — CampusKart" />
+        <meta property="og:description" content="List your item for sale on CampusKart. Reach hundreds of students on your campus." />
+        <meta property="og:url" content="https://campusKart.in/sell" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://campusbazaar.in/og-home.png" />
+        <meta property="og:image" content="https://campusKart.in/og-home.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://campusbazaar.in/og-home.png" />
+        <meta name="twitter:image" content="https://campusKart.in/og-home.png" />
         <meta name="robots" content="noindex" />
       </Helmet>
 
