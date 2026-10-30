@@ -1,4 +1,3 @@
-
 const OLLAMA_URL = "http://127.0.0.1:11434";
 const MODEL = "llama3.2:latest";
 
@@ -59,37 +58,49 @@ Additional details: ${product.extraDetails || "Not provided"}
 }
 
 
+
 export async function suggestProductPrice(product) {
+  const originalPrice = Number(
+    String(product.originalPrice ?? '').replace(/,/g, '').trim()
+  );
+
+  if (!Number.isFinite(originalPrice) || originalPrice <= 0) {
+    throw new Error('Please provide a valid original price.');
+  }
+
   const prompt = `
 You are a resale pricing assistant for a college second-hand marketplace in India.
 
-Estimate a reasonable resale price in Indian Rupees (INR).
-Consider the original price, product category, condition, and age if provided.
-The suggested price must not exceed the original price.
-If the condition is poor, suggest a lower price.
-Return ONLY one positive integer representing the price.
-Do not include currency symbols, explanations, or other text.
+Estimate a reasonable resale price in INR.
+Consider the original price, category, condition, and age.
 
-Product name: ${product.name}
-Category: ${product.category || "Not provided"}
-Condition: ${product.condition || "Not provided"}
-Original price in INR: ${product.originalPrice}
-Age: ${product.age || "Not provided"}
+Rules:
+- Return only one positive whole number.
+- The price must be at least 1.
+- The price must not exceed the original price.
+- Poor condition should result in a lower price.
+- Do not include currency symbols or explanations.
 
-Suggested price:
+Product: ${product.name}
+Category: ${product.category || 'Not provided'}
+Condition: ${product.condition || 'Not provided'}
+Original price: ${originalPrice}
+Age: ${product.age || 'Not provided'}
+
+Suggested resale price:
 `;
 
-  const response = await fetch("http://127.0.0.1:11434/api/generate", {
-    method: "POST",
+  const response = await fetch(`${OLLAMA_URL}/api/generate`, {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: "llama3.2:latest",
+      model: MODEL,
       prompt,
       stream: false,
       options: {
-        temperature: 0.1,
+        temperature: 0,
       },
     }),
     signal: AbortSignal.timeout(120000),
@@ -100,28 +111,32 @@ Suggested price:
   }
 
   const data = await response.json();
-  const text = data.response?.trim() ?? "";
+  const text = String(data.response ?? '').trim();
 
-  // Extract a positive integer from Ollama's response.
-  const match = text.match(/\b\d+(?:\.\d+)?\b/);
+  console.log('Ollama price response:', text);
+  console.log('Original product price:', originalPrice);
+
+  // Accept a response containing only a number.
+  const match = text.match(/^\s*₹?\s*(\d[\d,]*(?:\.\d+)?)\s*$/);
 
   if (!match) {
-    throw new Error("Ollama did not return a valid price.");
+    throw new Error(`Ollama returned an invalid price format: ${text}`);
   }
 
-  const price = Math.round(Number(match[0]));
+  const price = Math.round(Number(match[1].replace(/,/g, '')));
 
   if (
     !Number.isFinite(price) ||
     price < 1 ||
-    price > product.originalPrice
+    price > originalPrice
   ) {
-    throw new Error("Ollama returned an invalid resale price.");
+    throw new Error(
+      `Invalid resale price: ${price}. Original price: ${originalPrice}`
+    );
   }
 
   return price;
 }
-
 
 export async function moderateProductListing(product) {
   const prompt = `
@@ -155,7 +170,7 @@ Condition: ${JSON.stringify(product.condition || "")}
 Description: ${JSON.stringify(product.description || "")}
 `;
 
-  const response = await fetch("http://127.0.0.1:11434/api/generate", {
+  const response = await fetch(`${OLLAMA_URL}/api/generate`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

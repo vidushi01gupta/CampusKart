@@ -86,7 +86,7 @@ export default function AuthPage({ mode, providers }: AuthPageProps) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const [socialLoading, setSocialLoading] = useState<string | null>(null);
+  const [socialLoading] = useState<string | null>(null);
 
   const showEmail = !!mode;
   const showOAuth = providers && providers.length > 0;
@@ -109,43 +109,51 @@ export default function AuthPage({ mode, providers }: AuthPageProps) {
     e.preventDefault();
     setError('');
 
-    // Validate password on signup
+    // Allow only GL Bajaj college email IDs during signup
     if (!isLogin) {
-      const pwdError = validatePassword(password);
-      if (pwdError) {
-        setError(pwdError);
-        return;
-      }
-    }
-    setLoading(true);
-    try {
-      const result = isLogin
-        ? await signIn.email({ email, password })
-        : await signUp.email({ email, password, name: name || '' });
-      if (result.error) {
-        setError(result.error.message || 'Authentication failed');
-        return;
-      }
-      navigate(from, { replace: true });
-    } catch {
-      setError('An error occurred.');
-    } finally {
-      setLoading(false);
-    }
-  }
+        const collegeEmailRegex = /^[a-zA-Z0-9._%+-]+@glbitm\.ac\.in$/i;
 
-  async function handleSocialSignIn(provider: string) {
-    setError('');
-    setSocialLoading(provider);
-    try {
-      // callbackURL tells BetterAuth where to redirect after successful OAuth
-      await signIn.social({ provider, callbackURL: window.location.origin + from });
-    } catch {
-      const config = PROVIDER_CONFIG[provider];
-      setError(`Failed to sign in with ${config?.name || provider}`);
-      setSocialLoading(null);
+        if (!collegeEmailRegex.test(email.trim())) {
+            setError('Please use your GL Bajaj college email ID (@glbitm.ac.in) to register.');
+            return;
+        }
+
+        // Validate password on signup
+        const pwdError = validatePassword(password);
+
+        if (pwdError) {
+            setError(pwdError);
+            return;
+        }
     }
-  }
+
+    setLoading(true);
+
+    try {
+        const result = isLogin
+    ? await signIn({ email: email.trim(), password })
+    : await signUp({
+        email: email.trim().toLowerCase(),
+        password,
+        name: name || ''
+    });
+
+        if (result.error) {
+            setError(result.error.message || 'Authentication failed');
+            return;
+        }
+
+        navigate(from, { replace: true });
+
+    } catch {
+        setError('An error occurred.');
+    } finally {
+        setLoading(false);
+    }
+}
+  async function handleSocialSignIn(provider: string) {
+    setError('Google and GitHub login are currently unavailable. Please use your college email and password.');
+}
 
   if (isPending) {
     return (
